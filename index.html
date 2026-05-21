@@ -565,19 +565,7 @@ footer{background:#06101B;border-top:1px solid rgba(139,168,196,.07);padding:3.5
     height: auto;
     opacity: 0.28;
   }
-  .hero-spin-logo{}
-  
-  }
-  /* Video */
-  .hero-video-wrap {
-    position: absolute; inset: 0; z-index: 2; overflow: hidden;
-  }
-  .hero-video-wrap video {
-    position: absolute; top: 50%; left: 50%;
-    min-width: 100%; min-height: 100%; width: auto; height: auto;
-    transform: translate(-50%,-50%);
-    object-fit: cover; opacity: 0.35; pointer-events: none;
-  }
+  .hero-spin-logo{display:none}
   /* Overlay */
   .hero-overlay {
     position: absolute; inset: 0; z-index: 3;
@@ -712,11 +700,6 @@ footer{background:#06101B;border-top:1px solid rgba(139,168,196,.07);padding:3.5
   <div class="hero-spin-wrap"><canvas id="spinCanvas"></canvas></div>
 
   <!-- Layer 3: video -->
-  <div class="hero-video-wrap">
-    <video autoplay muted loop playsinline id="heroVid">
-      <source src="./video.mp4" type="video/mp4">
-    </video>
-  </div>
 
   <!-- Layer 4: dark overlay -->
   <div class="hero-overlay"></div>
