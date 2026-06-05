@@ -288,6 +288,7 @@ body.h #dot{background:var(--chrome)}
     overflow: hidden;
     cursor: pointer;
     display: block;
+    background: var(--navy);
   }
 .proj-img {
     width: 100%;
@@ -299,16 +300,7 @@ body.h #dot{background:var(--chrome)}
     transform-origin: center center;
     will-change: transform;
   }
-.proj-card:hover .proj-img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-    display: block;
-    filter: brightness(.55) saturate(.78);
-    transition: transform .6s cubic-bezier(.16,1,.3,1), filter .5s;
-    transform-origin: center center;
-    will-change: transform;
-  }
+.proj-card:hover .proj-img { transform: scale(1.05); filter: brightness(.65); }
 .proj-over{
   position:absolute;inset:0;
   background:linear-gradient(to top,rgba(10,20,34,.92) 0%,rgba(10,20,34,.05) 55%,transparent 100%);
@@ -832,19 +824,19 @@ footer {
 <div style="background:rgba(10,20,34,.98);border-top:1px solid rgba(139,168,196,.15);border-bottom:1px solid rgba(139,168,196,.1);display:grid;grid-template-columns:repeat(4,1fr);width:100%;position:relative;z-index:100">
   <div style="padding:1.6rem 2rem;border-right:1px solid rgba(139,168,196,.1);display:flex;flex-direction:column;gap:.25rem">
     <span style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,3.5vw,3rem);line-height:1;color:#B8CEDF;display:block">500+</span>
-    <span style="font-family:'Barlow Condensed',sans-serif;font-size:.6rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(240,244,248,.95);display:block">Projects Completed</span>
+    <span style="font-family:'Barlow Condensed',sans-serif;font-size:.6rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(240,244,248,.65);display:block">Projects Completed</span>
   </div>
   <div style="padding:1.6rem 2rem;border-right:1px solid rgba(139,168,196,.1);display:flex;flex-direction:column;gap:.25rem">
-    <span style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,3.5vw,3rem);line-height:1;color:#B8CEDF;display:block">23yr</span>
-    <span style="font-family:'Barlow Condensed',sans-serif;font-size:.6rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(240,244,248,.95);display:block">Industry Experience</span>
+    <span style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,3.5vw,3rem);line-height:1;color:#B8CEDF;display:block">23+</span>
+    <span style="font-family:'Barlow Condensed',sans-serif;font-size:.6rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(240,244,248,.65);display:block">Years Experience</span>
   </div>
   <div style="padding:1.6rem 2rem;border-right:1px solid rgba(139,168,196,.1);display:flex;flex-direction:column;gap:.25rem">
     <span style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,3.5vw,3rem);line-height:1;color:#B8CEDF;display:block">98%</span>
-    <span style="font-family:'Barlow Condensed',sans-serif;font-size:.6rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(240,244,248,.95);display:block">Client Satisfaction</span>
+    <span style="font-family:'Barlow Condensed',sans-serif;font-size:.6rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(240,244,248,.65);display:block">Client Satisfaction</span>
   </div>
   <div style="padding:1.6rem 2rem;display:flex;flex-direction:column;gap:.25rem">
-    <span style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,3.5vw,3rem);line-height:1;color:#B8CEDF;display:block">23+</span>
-    <span style="font-family:'Barlow Condensed',sans-serif;font-size:.6rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(240,244,248,.95);display:block">Years Experience</span>
+    <span style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,3.5vw,3rem);line-height:1;color:#B8CEDF;display:block">GTA</span>
+    <span style="font-family:'Barlow Condensed',sans-serif;font-size:.6rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(240,244,248,.65);display:block">Wide Service Area</span>
   </div>
 </div>
 
@@ -1020,8 +1012,8 @@ footer {
       </div>
       <!-- BEFORE (clipped on left) -->
       <div id="baBefore" style="position:absolute;inset:0;width:50%;overflow:hidden">
-        <img src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?auto=format&fit=crop&w=1400&q=80"
-          style="width:100vw;max-width:1400px;height:100%;object-fit:cover;filter:brightness(.6) saturate(.5)" onerror="this.style.opacity='0'" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1400&q=80"
+          style="width:100vw;max-width:1400px;height:100%;object-fit:cover;filter:brightness(.55) saturate(.3) sepia(.4)" onerror="this.style.opacity='0'" loading="lazy">
         <div style="position:absolute;top:1.2rem;left:1.5rem;font-family:'Barlow Condensed',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;padding:.35rem .9rem;background:rgba(15,29,48,.85);color:rgba(255,255,255,.7)">BEFORE</div>
       </div>
       <!-- Divider line -->
