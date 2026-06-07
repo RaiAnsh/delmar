@@ -2,6 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
   <meta name="google-site-verification" content="fMYPE8STy8eF_KsB1fGYy9HUenZFv1YZLHhLrronIIc" />
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
@@ -44,7 +50,7 @@
   <meta property="og:url" content="https://www.delmarcontracting.ca">
   <meta property="og:title" content="Delmar Contracting | Home Renovations Toronto & GTA">
   <meta property="og:description" content="Toronto's trusted renovation experts. Bathrooms, kitchens, basements, landscaping & full home renovations. 23+ years, 500+ projects. Call 416-434-0999.">
-  <meta property="og:image" content="https://www.delmarcontracting.ca/og-preview.jpg">
+  <meta property="og:image" content="https://www.delmarcontracting.ca/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:site_name" content="Delmar Contracting">
@@ -54,7 +60,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Delmar Contracting | Home Renovations Toronto & GTA">
   <meta name="twitter:description" content="Toronto's trusted renovation experts. Bathrooms, kitchens, basements, landscaping. 23+ years. Call 416-434-0999.">
-  <meta name="twitter:image" content="https://www.delmarcontracting.ca/og-preview.jpg">
+  <meta name="twitter:image" content="https://www.delmarcontracting.ca/og-image.jpg">
 
   <!-- Schema.org — tells Google exactly what this business is -->
   <script type="application/ld+json">
@@ -72,7 +78,7 @@
     "currenciesAccepted": "CAD",
     "paymentAccepted": "Cash, Credit Card, E-Transfer",
     "logo": "https://www.delmarcontracting.ca/logo.png",
-    "image": "https://www.delmarcontracting.ca/og-preview.jpg",
+    "image": "https://www.delmarcontracting.ca/og-image.jpg",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Toronto",
@@ -163,7 +169,7 @@ body.h #dot{background:var(--chrome)}
 
 /* NAV */
 #nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+    position: fixed; top: 0; left: 0; right: 0; z-index:9002;
     display: flex; align-items: center; justify-content: space-between;
     padding: 1.2rem 3rem;
     transition: background .4s, padding .4s, border-color .4s;
@@ -817,7 +823,7 @@ footer {
 
 /* ══ MOBILE ══ */
 /* Hamburger — hidden on desktop */
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.4rem;background:none;border:none;z-index:600;position:relative}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.4rem;background:none;border:none;position:relative}
 .hamburger span{display:block;width:24px;height:2px;background:var(--white);transition:transform .3s,opacity .3s}
 .hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
 .hamburger.open span:nth-child(2){opacity:0}
@@ -828,14 +834,20 @@ footer {
   #nav{padding:1rem 1.2rem}
   #nav.stuck{padding:.8rem 1.2rem}
   .nav-links{
-    position:fixed;inset:0;background:rgba(14,25,41,.97);
+    position:fixed;
+    top:0;left:0;right:0;bottom:0;
+    width:100vw;height:100vh;
+    background:rgba(14,25,41,.99);
     flex-direction:column;align-items:center;justify-content:center;
-    gap:2.5rem;display:none;z-index:500
+    gap:2.5rem;display:none;
+    z-index:9000;
+    overflow:hidden;
+    -webkit-overflow-scrolling:touch;
   }
   .nav-links.open{display:flex!important}
-  .nav-links a{font-size:1.1rem;letter-spacing:.12em}
+  .nav-links a{font-size:1.1rem;letter-spacing:.12em;color:var(--white)}
   .nav-cta{display:none}
-  .hamburger{display:flex}
+  .hamburger{display:flex;z-index:9001}
 
   /* HERO */
   .hero-content{padding:0 1.2rem 1.5rem}
@@ -1650,13 +1662,16 @@ window.addEventListener('scroll', () => {
   const links = document.querySelector('.nav-links');
   if(!btn||!links) return;
   btn.addEventListener('click',()=>{
-    btn.classList.toggle('open');
+    const isOpen = btn.classList.toggle('open');
     links.classList.toggle('open');
+    // Prevent background scroll when menu open
+    document.body.style.overflow = isOpen ? 'hidden' : '';
   });
   links.querySelectorAll('a').forEach(a=>{
     a.addEventListener('click',()=>{
       btn.classList.remove('open');
       links.classList.remove('open');
+      document.body.style.overflow = '';
     });
   });
 })();
